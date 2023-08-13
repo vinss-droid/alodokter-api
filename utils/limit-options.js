@@ -3,12 +3,12 @@ const slowDown = require("express-slow-down")
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 50,
+    max: 500,
     message: "Too many accounts created from this IP, please try again after an hour"
 })
 
 const slow = slowDown({
-    delayAfter: 50,
+    delayAfter: 500,
     windowMs: 15 * 60 * 1000,
     delayMs: 1000,
     maxDelayMs: 20000,
