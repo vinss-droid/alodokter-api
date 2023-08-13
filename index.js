@@ -1,8 +1,12 @@
 const express = require("express")
+const cors = require('cors')
 const app = express()
 const scrapeRoutes = require("./router/route-scrape")
 const {slow, limiter} = require("./utils/limit-options")
 
+// enable cors
+
+app.use(cors());
     
 app.get("/", slow, limiter, (req, res) => {
     res.send({
